@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%=locals.title%></title>
+</head>
+<body>
+  <h1>My contacts List</h1>
+  <% for (let i of contacts) { %>
+
+     <p><%=i.name%></p>
+     <p><%=i.phone%></p>
+
+      <form action="/delete/<%=i._id%>"  method="post"><button type="submit">Delete</button></form>
+
+  <% } %> 
+  
+  
+  <form action="/create/contact" method="post">
+
+    <input type="text" name="nam" placeholder="Enter your name">
+    <input type="number" name="phon" placeholder="Enter your phone">
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
